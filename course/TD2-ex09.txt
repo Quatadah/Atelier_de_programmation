@@ -1,0 +1,23 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 9 : Écriture de tests fonctionnels.
+
+  Exécuter ce programme de tests fonctionnels sur vos mises en
+  œuvre. Pour chaque mise en œuvre, que faut-il changer dans le
+  programme de test?  Expliquer pourquoi.
+
+  Que conclure sur l'utilisation des tests fonctionnels et structurels?
+
+%debut
+Il faut rajouter dans la ligne de compilation du programme qui teste l'option -DLINK si on veut tester set__add() de set_link.c, ou -DDYNAMIC si
+on veut tester set__add() de set_dynamic.c ou -DSENTINEL si on veut tester set__add() de set_sentinel.c.
+%fin

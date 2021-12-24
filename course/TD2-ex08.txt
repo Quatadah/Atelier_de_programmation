@@ -1,0 +1,62 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 8 : Les fonctions Ajouter/Retirer en queue
+
+1) La fonction lnk__add_tail ajoute une cellule en fin de chaînage.
+    a) (Sur un schéma, montrer ??)
+    Expliquer le traitement à effectuer.
+
+%debut
+On commence par mettre dans le champ next de l'élément à ajouter une sentinelle,puis on modifie le champ next du dernier élément déjà dans la liste.
+Exemple:
+L = 2->3->4->5->SENTINEL
+// lnk_add_tail(L,7);
+7->SENTINEL
+5->7
+2->3->4->5->7->SENTINEL
+%fin
+
+   b) Donner la complexité.
+
+%debut
+complexité linéaire
+%fin
+
+    c) Proposer une solution pour améliorer la complexité.
+
+%debut
+Avec une liste doublement chaînée,on peut ajouter un champ précédent dans la structure element , il suffit donc de faire sentinelle.précédent pour accéder directement au dernier élément de la liste.
+%fin
+
+
+2) La fonction lnk__remove_tail enlève la dernière cellule du chaînage.
+    a) (Sur un schéma, montrer ??)
+       Expliquer le traitement à effectuer.
+
+%debut
+il suffit de modifier le champ next de l'avant dernier élément en mettant sentinelle 
+Exemple:
+L = 2->3->4->5->SENTINEL
+//lnk_remove_tail(L)
+4->SENTINEL
+L = 2->3->4->SENTINEL
+%fin
+
+b) Que conclure pour la réalisation de cette opération
+      pour cette mise en œuvre de set ?
+      À quelle condition cette opération est-elle réalisable
+      sur struct link ?
+
+%debut
+Cette opération permet d'éliminer le plus grand élément du set puique dans cette mise en oeuvre il correspond bien au dernier élément du set.
+Cette opération est réalisable si le link contient au moins un élément.
+%fin

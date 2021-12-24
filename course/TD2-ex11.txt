@@ -1,0 +1,53 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 11 : set__union version opération interne
+
+On propose de mettre en œuvre set__union comme une opération
+interne du TAD, qui peut donc utiliser la représentation mémoire de
+struct set.
+
+Donner un algorithme de complexité linéaire pour cette opération
+dans l'une des trois mises en œuvre du type struct set.
+
+
+%debut
+struct set set__union(struct set *s1,struct set *s2) {
+       struct set s3=empty__set();
+       struct lelement* l1=s1->link->head;
+       struct lelement* l2=s2->link->head;
+       while (l1!=SENTINEL && l2!=SENTINEL)
+             {
+                if (l1->data > l2->data) {
+                  lnk_add__head(s3.link,l2->data);
+                  l2=l2->next
+                  }
+               else if (l2->data>l1->data) {
+                  lnk_add__head(s3.link,l1->data);
+       	     l1=l1->next;
+                  }
+               else {
+       	     lnk_add__head(s3.link,l1->data);
+                  l1=l1->next;
+                  l2=l2->next;
+                  }
+            }
+       struct set s4=empty__set();
+       struct lelement *l=s3.link->head;
+       while (l!=SENTINEL) {
+                 lnk_add__head(s4.link,l->data);
+                 l=l->next;
+             }
+       return s4;
+       }
+       	
+La fonction lnk_add__head a une compléxité constante car on peut accéder directement au premier élément de la liste,cette fonction est appelée au maximum n1+n2 fois avec n1 la taille du premier set et n2 celle du deuxième.Donc la complexité de cet algorithme est bien linéaire.	    
+%fin

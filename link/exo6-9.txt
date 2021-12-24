@@ -1,0 +1,24 @@
+Exercice 6:
+
+1 - schémas à faire
+2 - 
+    a - complexité de lnk__add__head : constante, car pas de parcours nécessaire
+    b - complexité de lnk__add__after : linéaire, dépend du placement de l'élément entré en paramètres.
+    c - complexité de lnk__remove_after : linéaire, dépend du placement de l'élément entré en paramètres.
+
+Exercice 7:
+1 - 
+    struct lelement sentinelle;
+    sentinelle.data = value;
+    sentinelle.next = sentinelle;
+
+2 -
+    Le premier élément de la liste sera sentinelle, on aura donc :
+    Set -> link -> &sentinelle
+    
+Exercice 8:
+
+1 - fait
+2 - fait
+
+Exercice 9:

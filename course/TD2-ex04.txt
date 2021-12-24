@@ -1,0 +1,78 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 4 : La fonction set__empty
+La fonction set__empty initialise un ensemble à vide.
+
+1) Le TAD n'indique pas le mode d'allocation mémoire. Deux modes
+    sont possibles: allocation par le TAD ou allocation par le client
+    du TAD. Il y a trois prototypes possibles pour la fonction:
+
+    struct set * set__empty();
+
+    struct set set__empty();
+
+    void set__empty(struct set *);
+
+    À quel mode d'allocation mémoire correspond chacun de ces
+    prototypes?
+    Montrer qu'une allocation sur la pile n'est pas compatible avec
+    le premier prototype.
+
+%debut
+Le premier prototype fait une allocation par TAD car la réservation de la mémoire se fait dans la fonction set__empty.
+Le 2ème prototype fait une allocation par le client car on doit réserver la mémoire dans la fonction main avant d'appeler la fonction.
+Le dernier prototype fait une allocation par client car la mémoire du paramètre d'entrée est reservée avant l'appel de la fonction.
+
+si on fait une allocation sur la pile dans le premier prototype,struct set sera une variable locale à la fonction set__empty et on ne peut pas donc retourner son adresse.
+%fin
+
+2) Expliquer pourquoi le compilateur doit connaître la définition de
+    struct set afin de compiler la fonction main ci-dessous.
+
+      int main() {
+        struct set s;
+        // s = set__empty();
+        // set__add(&s, 64);
+        return 0;
+      }
+
+%debut
+L'instruction "struct set s;"  demande au compilateur de réserver de la mémoire pour la structure s, mais s'il ne connaît pas la définition de struct set il ne peut pas savoir la taille de l'espace mémoire qu'il doit lui réserver.
+%fin
+
+3) Écrire un exemple d'utilisation des deux derniers prototypes,
+    et donner leurs avantages et inconvénients.
+
+
+%debut
++Pour "struct set set__empty()":
+exemple d'utilisation:
+  int main(){
+      struct set s;
+      s=set__empty();
+      return 0;
+      }
+avantages: pas de paramètre en entrée
+inconvénients: l'allocation mémoire se fait par le client
+
++Pour "void set__empty(struct set *);
+exemple d'utilisation:
+  int main(){
+      struct set s;
+      set__empty(&s);
+      return 0;
+      }
+avantages: la fonction accède à la structure et la modifie directement
+inconvénients:l'allocation mémoire se fait par le client
+   
+   
+%fin

@@ -1,0 +1,27 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 3 : La fonction set__add
+
+1) Pourquoi est-il possible, en langage C, d'avoir un prototype
+   de la fonction set__add qui ne renvoie pas une valeur de type
+   struct set ?
+
+%debut
+Car il est possible de modifier directement la valeur de struct set en prenant son adresse comme paramètre, et dans ce cas on n'aura pas besoin de retourner la nouvelle valeur du set puisqu'on peut y accéder à partir de son adresse.
+%fin
+
+2) Dans cette fonction à quoi peut servir le retour d'une valeur
+    entière (donner un cas d'utilisation)?
+
+%debut
+Le retour d'une valeur entière permet de savoir si l'élément a été ajouté dans le set ou non.On peut utiliser cette valeur pour savoir si l'élément est déjà dans le set (dans ce cas la valeur retournée sera négative)
+%fin

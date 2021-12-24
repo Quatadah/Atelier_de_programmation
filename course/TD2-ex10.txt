@@ -1,0 +1,29 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 10 : set__union version opération externe
+
+On propose l'algorithme suivant basé sur les opérations du TAD:
+
+ALGORITHM set__union:: (s1, s2) |-> s3
+s3 = set__empty();
+for i in 0..INT_MAX // stored values in type int
+  if (set__find(s1, i) or set__find(s2, i))
+    s3 = set__add(s3, i)
+
+Calculer la complexité de cet algorithme pour les trois mises en
+œuvre de set.
+
+%debut
+Pour la première mise en oeuvre (tableau avec sentinelle), la complexité est en 0(m*(n1 + n2)*log(n1*n2)) où max = max(n1,n2) = INT_MAX et, n1 et n2 sont les cardinals des ensembles s1 et s2. En effet, la complexité de set__find est en O(nlog(n)) pour un tableau de longueur n avec une recherche dichotomique.
+
+Pour les deux autres mises en oeuvre, la complexité est (dans le pire des cas) en O(m*(n1+n2)) où m = max(n1,n2) et, n1 et n2 sont les cardinals des ensembles s1 et s2.
+%fin

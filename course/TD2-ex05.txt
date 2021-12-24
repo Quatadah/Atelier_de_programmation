@@ -1,0 +1,28 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 5 : Introduction de nouveaux types.
+Lors de la mise en œuvre avec un tableau à sentinelle, nous avons choisi
+de créer un type:
+
+   struct set {
+     int s[SET__SIZE];
+   };
+
+et de l'utiliser dans nos fonctions, par exemple:
+   int set__add(struct set * se, int x).
+
+Pourquoi mettre le tableau dans une structure au lieu de l'utiliser
+directement comme paramètre int set__add(int s[], int x) ?
+
+%debut
+Mettre le tableau dans une structure permet d'ajouter plus tard de nouveaux champs si on en a besoin.
+%fin

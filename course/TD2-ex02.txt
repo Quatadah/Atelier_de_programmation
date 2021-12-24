@@ -1,0 +1,46 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 2 : La fonction set__is_empty.
+
+1) Donner les prototypes de la fonction set__is_empty
+    correspondant aux deux passages de paramètres possibles.
+
+%debut
+passage par structure : int set__is_empty(const struct set se);
+passage par adresse: int set__is_empty(const struct set* se);
+%fin
+
+2) Sur un exemple, montrer qu'il est préférable d'avoir un
+    passage par adresse pour le paramètre d'entrée.
+
+%debut
+    struct set se ;
+    // On implémente se avec plusieurs valeurs
+    int x = set__is_empty(se);
+    // Quand on appelle set__is_empty(struct set se) où le paramètre est une structure et pas un pointeur vers
+    une structure, la fonction créee une copie de toute la structure "se" pour l'utiliser dans la fonction.
+    Or la structure se peut prendre une centaine voire des milliers de valeurs, ce qui serait long à réaliser.
+    Cependant, si on utilise set__is_empty(struct set *se), la fonction pointera directement sur là où se trouve
+    la structure se, ce qui permettra d'économiser en espace et en temps.
+
+%fin
+
+3) Pourquoi le passage par adresse ne correspond pas à la
+    description (au comportement) de cette opération dans le TAD?
+    Préciser l'utilisation du mot-clé "const" dans le
+    prototype de la fonction.
+
+%debut
+    -Le passage par adresse permet de modifier la structure, or c'est pas le but de la fonction.
+    -En utilisant le passage par adresse, il y a le risque de faire des modifications sur la structure se, or le but de la fonction
+    est loin de modifier la structure se, d'où par sécurité, on rajoute le mot-clé "const".
+%fin

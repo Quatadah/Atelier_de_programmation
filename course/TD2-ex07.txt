@@ -1,0 +1,43 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 7 : Représentation du type link.
+
+On représente fréquemment une structure chaînée par un simple pointeur sur la
+première cellule.
+
+ L'autre représentation habituelle sépare la structure chaînée en
+deux structures C distinctes.  L'expérience de la feuille précédente,
+nous a montré qu'il était préférable d'effectuer cette
+séparation. Nous définissons un type struct link avec un
+champ head contenant un pointeur sur la première cellule
+de la structure.
+
+Par ailleurs, il existe plusieurs manières d'encoder la fin de chaîne :
+avec le pointeur NULL, avec une sentinelle, en pointant sur la première
+cellule, ....
+
+Indiquer les avantages et inconvénients de chacun des choix ci-dessus.
+Votre mise en œuvre permet-elle d'abstraire certains de ces choix?
+
+%debut
+Pointeur NULL:
+Avantage: Pas besoin d'ajouter un élément à la liste chaînée  
+Inconvénient: NULL ne permet pas nécessairement d'identifier la fin de la liste car il n'est pas unique
+
+Sentinelle:
+Avantage: Elément unique (on est sûr d'être à la fin de la liste)
+Inconvénient: On doit ajouter un élément à la fin de la liste
+
+Pointer sur la première cellule:
+Avantage: Permet de parcourir plus facilement plusieurs fois la liste
+Inconvénient: Pour supprimer le premier élément, il faut parcourir toute la liste pour mettre à jour la boucle
+%fin

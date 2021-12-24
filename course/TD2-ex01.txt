@@ -1,0 +1,39 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 1 : Type Abstrait de Données (TAD)
+1) À quoi fait référence le terme abstrait dans le concept de
+    ``Type Abstrait de Données''?
+
+%debut
+Le mot "Abstrait" veut dire que ce type comporte plusieurs opérations, fonctionnalités 
+et axiomes qu'une structure de données doit réaliser.
+%fin
+
+2) Quel aspect va différentier les mises en œuvre d'un TAD?
+
+%debut
+    La mise en oeuvre d'un TAD permet de créer des structures 
+qui n'existent pas d'une manière directe,mais en les composant 
+avec les types primitifs existants de base.
+Par exemple : un type abstrait "File" n'existe pas directement en "C",
+mais on peut le créer en utilisant les types abstraits primitifs.
+%fin
+
+3) Pourquoi chercher à écrire un algorithme (même en langage C) à
+    partir d'un TAD?
+
+%debut
+    Un TAD permet de créer des structures de données complexes qu'on ne pourrait 
+utiliser directement dans un langage. Pour créer un arbre binaire en langage "C", 
+il serait pénible et sous beaucoup de conditions voire même impossible de le réaliser 
+en utilisant que les tableaux. Cependant, en implémentant un TAD, ce serait plus facile.
+%fin

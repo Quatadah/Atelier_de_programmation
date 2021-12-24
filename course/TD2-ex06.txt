@@ -1,0 +1,23 @@
+
+Répondre aux questions ci-dessous directement dans ce fichier, dans
+les zones de réponse indiquées pour chaque question par les balises
+%debut et %fin en remplacant le texte ...Répondre ici... par votre
+réponse.
+
+MERCI DE NE PAS MODIFIER LE TEXTE EN-DEHORS DES ZONES ENTRE DEUX
+BALISES DE REPONSE %debut ET %fin.
+
+
+
+# Exercice 6 : Libération de la mémoire
+
+Pour chacune des trois mises en œuvre, indiquez pourquoi il est nécessaire
+de définir la fonction
+    void set__free(struct set * se);.
+
+%debut
+Pour la première mise en oeuvre, bien que cette fonction ne soit pas utile, elle a été implémentée car le fichier "set.h" est commun aux trois mise en oeuvre.
+
+Pour les deux autres mises en oeuvre, cette fonction est indispensable à libérer la mémoire que l'on a allouée. 
+
+%fin
